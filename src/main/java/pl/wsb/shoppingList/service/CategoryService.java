@@ -34,7 +34,6 @@ public class CategoryService {
 				.map(category -> {
 					category.setId(newCategory.getId());
 					category.setName(newCategory.getName());
-					category.setDescription(newCategory.getDescription());
 					return categoryRepository.save(category);
 				})
 				.orElseThrow(() -> new CategoryNotFoundException(Long.parseLong(id)));

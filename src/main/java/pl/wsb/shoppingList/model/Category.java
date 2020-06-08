@@ -15,15 +15,12 @@ public class Category {
 	@NotNull
 	private String name;
 
-	private String description;
-
 	public Category() {
 	}
 
-	public Category(Long id, String name, String description) {
+	public Category(Long id, String name) {
 		this.id = id;
 		this.name = name;
-		this.description = description;
 	}
 
 	public Long getId() {
@@ -40,13 +37,5 @@ public class Category {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
 	}
 }

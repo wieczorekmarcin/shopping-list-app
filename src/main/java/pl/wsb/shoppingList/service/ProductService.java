@@ -35,7 +35,6 @@ public class ProductService {
 				.map(product -> {
 					product.setId(newProduct.getId());
 					product.setName(newProduct.getName());
-					product.setDescription(newProduct.getDescription());
 					product.setCategory(newProduct.getCategory());
 					product.setUnit(newProduct.getUnit());
 					return productRepository.save(product);

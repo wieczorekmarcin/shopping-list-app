@@ -14,8 +14,6 @@ public class Product {
 	@NotNull
 	private String name;
 
-	private String description;
-
 	@NotNull
 	@ManyToOne
 	private Category category;
@@ -27,10 +25,9 @@ public class Product {
 	public Product() {
 	}
 
-	public Product(Long id, String name, String description, Category category, Unit unit) {
+	public Product(Long id, String name, Category category, Unit unit) {
 		this.id = id;
 		this.name = name;
-		this.description = description;
 		this.category = category;
 		this.unit = unit;
 	}
@@ -49,14 +46,6 @@ public class Product {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
 	}
 
 	public Category getCategory() {
