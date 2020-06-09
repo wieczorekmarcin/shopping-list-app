@@ -16,6 +16,8 @@ public class ShoppingList {
 	@NotNull
 	private String name;
 
+	private String description;
+
 	private Date createdOn;
 
 	private boolean completed;
@@ -28,9 +30,10 @@ public class ShoppingList {
 	public ShoppingList() {
 	}
 
-	public ShoppingList(Long id, String name, Date createdOn, boolean completed, boolean favourite, List<ShoppingListItem> items) {
+	public ShoppingList(Long id, String name, String description, Date createdOn, boolean completed, boolean favourite, List<ShoppingListItem> items) {
 		this.id = id;
 		this.name = name;
+		this.description = description;
 		this.createdOn = createdOn;
 		this.completed = completed;
 		this.favourite = favourite;
@@ -51,6 +54,14 @@ public class ShoppingList {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public Date getCreatedOn() {

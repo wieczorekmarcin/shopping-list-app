@@ -16,27 +16,27 @@ public class ShoppingListItemController {
 		this.shoppingListItemService = shoppingListItemService;
 	}
 
-	@RequestMapping(path = "/shoppingListItems", method = RequestMethod.GET)
+	@RequestMapping(path = "/api/shoppingListItems", method = RequestMethod.GET)
 	public List<ShoppingListItem> getAllShoppingListItems() {
 		return shoppingListItemService.findAllShoppingListItems();
 	}
 
-	@RequestMapping(path = "/shoppingListItems/{id}", method = RequestMethod.GET)
+	@RequestMapping(path = "/api/shoppingListItems/{id}", method = RequestMethod.GET)
 	public ShoppingListItem getShoppingListItem(@PathVariable("id") String id) {
 		return shoppingListItemService.findShoppingListItemById(id);
 	}
 
-	@RequestMapping(path = "/shoppingListItems", method = RequestMethod.POST)
+	@RequestMapping(path = "/api/shoppingListItems", method = RequestMethod.POST)
 	public ShoppingListItem createShoppingListItem(@RequestBody ShoppingListItem shoppingListItem) {
 		return shoppingListItemService.createShoppingListItem(shoppingListItem);
 	}
 
-	@RequestMapping(path = "/shoppingListItems/{id}", method = RequestMethod.PUT)
+	@RequestMapping(path = "/api/shoppingListItems/{id}", method = RequestMethod.PUT)
 	public ShoppingListItem updateShoppingListItem(@RequestBody ShoppingListItem shoppingListItem, @PathVariable("id") String id) {
 		return shoppingListItemService.updateShoppingListItem(shoppingListItem, id);
 	}
 
-	@RequestMapping(path = "/shoppingListItems/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(path = "/api/shoppingListItems/{id}", method = RequestMethod.DELETE)
 	public void deleteShoppingListItem(@PathVariable("id") String id) {
 		shoppingListItemService.deleteShoppingListItem(id);
 	}

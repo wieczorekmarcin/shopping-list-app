@@ -1,12 +1,21 @@
 <ion-content class="ion-padding">
 	<ion-icon name="close-outline" (click)="dismiss()"></ion-icon>
-	<form>
+	<form [formGroup]="shoppingListForm">
 		<ion-list lines="full" class="ion-no-margin ion-no-padding">
-			<ion-item>
+			<ion-item [ngClass]="{ 'is-invalid': submitted && form.name.errors }">
 				<ion-label position="stacked">Nazwa listy</ion-label>
-				<ion-input type="text"></ion-input>
+				<ion-input type="text" formControlName="name"></ion-input>
+			</ion-item>
+			<div *ngIf="submitted && form.name.errors" class="invalid-feedback">
+				<div *ngIf="form.name.errors.required">To pole jest wymagane.</div>
+			</div>
+
+
+			<ion-item>
+				<ion-label position="stacked">Opis</ion-label>
+				<ion-textarea type="textarea" formControlName="description"></ion-textarea>
 			</ion-item>
 		</ion-list>
-        <ion-button>UTWÓRZ</ion-button>
+        <ion-button (click)="onSubmit()">UTWÓRZ</ion-button>
 	</form>
 </ion-content>

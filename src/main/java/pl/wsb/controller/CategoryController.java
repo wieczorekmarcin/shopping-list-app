@@ -18,32 +18,32 @@ public class CategoryController {
 		this.categoryService = categoryService;
 	}
 
-	@RequestMapping(path = "/categories", method = RequestMethod.GET)
+	@RequestMapping(path = "/api/categories", method = RequestMethod.GET)
 	public ResponseEntity<List<Category>> getAllCategories() {
 		List<Category> allCategories = categoryService.findAllCategories();
 		return new ResponseEntity(allCategories, HttpStatus.OK);
 	}
 
-	@RequestMapping(path = "/categories/{id}", method = RequestMethod.GET)
+	@RequestMapping(path = "/api/categories/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Category> getCategory(@PathVariable("id") String id) {
 		Category categoryById = categoryService.findCategoryById(id);
 		return new ResponseEntity(categoryById, HttpStatus.OK);
 	}
 
-	@RequestMapping(path = "/categories", method = RequestMethod.POST)
+	@RequestMapping(path = "/api/categories", method = RequestMethod.POST)
 	public ResponseEntity<Category> createCategory(@RequestBody Category category) {
 		Category newCategory = categoryService.createCategory(category);
 		return new ResponseEntity(newCategory, HttpStatus.CREATED);
 	}
 
-	@RequestMapping(path = "/categories/{id}", method = RequestMethod.PUT)
+	@RequestMapping(path = "/api/categories/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<Category> updateCategory(@RequestBody Category category, @PathVariable("id") String id) {
 		Category updatedCategory = categoryService.updateCategory(category, id);
 		return new ResponseEntity(updatedCategory, HttpStatus.OK);
 
 	}
 
-	@RequestMapping(path = "/categories/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(path = "/api/categories/{id}", method = RequestMethod.DELETE)
 	public void deleteCategory(@PathVariable("id") String id) {
 		categoryService.deleteCategory(id);
 	}

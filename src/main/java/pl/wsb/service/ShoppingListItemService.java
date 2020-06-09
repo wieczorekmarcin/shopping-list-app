@@ -33,7 +33,6 @@ public class ShoppingListItemService {
 		return shoppingListItemRepository.findById(Long.parseLong(id))
 				.map(shoppingListItem -> {
 					shoppingListItem.setId(newShoppingListItem.getId());
-					shoppingListItem.setDescription(newShoppingListItem.getDescription());
 					shoppingListItem.setProduct(newShoppingListItem.getProduct());
 					shoppingListItem.setShoppingList(newShoppingListItem.getShoppingList());
 					shoppingListItem.setPurchased(newShoppingListItem.isPurchased());

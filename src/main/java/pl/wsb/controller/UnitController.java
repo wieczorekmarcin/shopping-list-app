@@ -16,27 +16,27 @@ public class UnitController {
 		this.unitService = unitService;
 	}
 
-	@RequestMapping(path = "/units", method = RequestMethod.GET)
+	@RequestMapping(path = "/api/units", method = RequestMethod.GET)
 	public List<Unit> getAllunits() {
 		return unitService.findAllUnits();
 	}
 
-	@RequestMapping(path = "/units/{id}", method = RequestMethod.GET)
+	@RequestMapping(path = "/api/units/{id}", method = RequestMethod.GET)
 	public Unit getUnit(@PathVariable("id") String id) {
 		return unitService.findUnitById(id);
 	}
 
-	@RequestMapping(path = "/units", method = RequestMethod.POST)
+	@RequestMapping(path = "/api/units", method = RequestMethod.POST)
 	public Unit createUnit(@RequestBody Unit unit) {
 		return unitService.createUnit(unit);
 	}
 
-	@RequestMapping(path = "/units/{id}", method = RequestMethod.PUT)
+	@RequestMapping(path = "/api/units/{id}", method = RequestMethod.PUT)
 	public Unit updateUnit(@RequestBody Unit unit, @PathVariable("id") String id) {
 		return unitService.updateUnit(unit, id);
 	}
 
-	@RequestMapping(path = "/units/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(path = "/api/units/{id}", method = RequestMethod.DELETE)
 	public void deleteUnit(@PathVariable("id") String id) {
 		unitService.deleteUnit(id);
 	}

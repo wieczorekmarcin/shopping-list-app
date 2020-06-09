@@ -13,6 +13,11 @@ export class AppComponent {
 
 	pages = [
 		{
+			title: 'Moje Listy',
+			url: '/shopping-list',
+			icon: 'list'
+		},
+		{
 			title: 'Przepisy',
 			url: '/recipies',
 			icon: 'restaurant'

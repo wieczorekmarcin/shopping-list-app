@@ -16,27 +16,27 @@ public class ShoppingListController {
 		this.shoppingListService = shoppingListService;
 	}
 
-	@RequestMapping(path = "/shoppingLists", method = RequestMethod.GET)
+	@RequestMapping(path = "/api/shoppingLists", method = RequestMethod.GET)
 	public List<ShoppingList> getAllShoppingLists() {
 		return shoppingListService.findAllShoppingLists();
 	}
 
-	@RequestMapping(path = "/shoppingLists/{id}", method = RequestMethod.GET)
+	@RequestMapping(path = "/api/shoppingLists/{id}", method = RequestMethod.GET)
 	public ShoppingList getShoppingList(@PathVariable("id") String id) {
 		return shoppingListService.findShoppingListById(id);
 	}
 
-	@RequestMapping(path = "/shoppingLists", method = RequestMethod.POST)
+	@RequestMapping(path = "/api/shoppingLists", method = RequestMethod.POST)
 	public ShoppingList createShoppingList(@RequestBody ShoppingList shoppingList) {
 		return shoppingListService.createShoppingList(shoppingList);
 	}
 
-	@RequestMapping(path = "/shoppingLists/{id}", method = RequestMethod.PUT)
+	@RequestMapping(path = "/api/shoppingLists/{id}", method = RequestMethod.PUT)
 	public ShoppingList updateShoppingList(@RequestBody ShoppingList shoppingList, @PathVariable("id") String id) {
 		return shoppingListService.updateShoppingList(shoppingList, id);
 	}
 
-	@RequestMapping(path = "/shoppingLists/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(path = "/api/shoppingLists/{id}", method = RequestMethod.DELETE)
 	public void deleteShoppingList(@PathVariable("id") String id) {
 		shoppingListService.deleteShoppingList(id);
 	}

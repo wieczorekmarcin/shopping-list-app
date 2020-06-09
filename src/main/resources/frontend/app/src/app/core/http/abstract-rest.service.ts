@@ -1,12 +1,11 @@
 import {Observable} from 'rxjs';
-import {createRequestOption, Search} from './request-util';
+import {createRequestOption} from './request-util';
 import {HttpClient, HttpResponse} from '@angular/common/http';
 import {map} from 'rxjs/operators';
 
 export abstract class AbstractRestService<T> {
 	protected constructor(protected http: HttpClient,
-						  protected resourceUrl: string,
-						  protected resourceSearchUrl: string) {
+						  protected resourceUrl: string) {
 	}
 
 	create(object: T): Observable<HttpResponse<T>> {
@@ -36,13 +35,6 @@ export abstract class AbstractRestService<T> {
 
 	delete(id: number): Observable<HttpResponse<{}>> {
 		return this.http.delete(`${this.resourceUrl}/${id}`, {observe: 'response'});
-	}
-
-	search(req: Search): Observable<HttpResponse<T[]>> {
-		const options = createRequestOption(req);
-		return this.http
-			.get<T[]>(this.resourceSearchUrl, {params: options, observe: 'response'})
-			.pipe(map((res: HttpResponse<T[]>) => this.convertDateArrayFromServer(res)));
 	}
 
 	protected convertDateFromClient(object: T): T {
