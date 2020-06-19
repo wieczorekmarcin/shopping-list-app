@@ -21,8 +21,7 @@
 * In the application, mandatory fields are marked differently than optional fields.
 * Application colors: white, blue, red
 ### Description, recipients, benefits
-Shopping List App allows you to add shopping list and monitor their status. Many product categories allow you to use almost all products. By using the UI Design Pattern, the user will be able to use all the used ones without any problems.
-## Documentation
+Shopping List App allows you to add shopping list and monitor their status. Many product categories allow you to find almost every products. By using the UI Design Pattern, the user will be able to use all the modules and functionalities ones without any problems.## Documentation
 ### Technology stack
 - Java 8
 - Spring Boot 2
@@ -34,6 +33,13 @@ Shopping List App allows you to add shopping list and monitor their status. Many
 ![database_diagram](/../master/src/main/resources/images/database_diagram.png?raw=true "database_diagram")
 ### Endpoints
 ![endpoints](/../master/src/main/resources/images/endpoints.png?raw=true "endpoints")
+
+## How to run
+* run `sudo mvn spring-boot:run` in root folder
+* http://localhost:8080 - Shopping List App
+* http://localhost:8080/api/swagger - Swagger UI
+* http://localhost:8080/api/docs - Doc JSON
+* http://localhost:8080/h2-console - H2 console
 
 ## App flow
 ![app](/../master/src/main/resources/images/app.gif?raw=true "app")

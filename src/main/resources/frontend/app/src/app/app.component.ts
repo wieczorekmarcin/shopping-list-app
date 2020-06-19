@@ -13,27 +13,27 @@ export class AppComponent {
 
 	pages = [
 		{
-			title: 'Moje Listy',
+			title: 'My Shopping Lists',
 			url: '/shopping-list',
 			icon: 'list'
 		},
 		{
-			title: 'Przepisy',
+			title: 'Recipies',
 			url: '/recipies',
 			icon: 'restaurant'
 		},
 		{
-			title: 'Promocje',
+			title: 'Promotions',
 			url: '/promotions',
 			icon: 'cash'
 		},
 		{
-			title: 'Kosz',
+			title: 'Trash',
 			url: '/trash',
 			icon: 'trash'
 		},
 		{
-			title: 'Ustawienia',
+			title: 'Settings',
 			url: '/settings',
 			icon: 'settings'
 		}

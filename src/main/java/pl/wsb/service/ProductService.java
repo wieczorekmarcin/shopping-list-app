@@ -29,8 +29,8 @@ public class ProductService {
 		return productRepository.save(product);
 	}
 
-	public Product updateProduct(Product newProduct, String id) {
-		return productRepository.findById(Long.parseLong(id))
+	public Product updateProduct(Product newProduct) {
+		return productRepository.findById(newProduct.getId())
 				.map(product -> {
 					product.setId(newProduct.getId());
 					product.setName(newProduct.getName());
@@ -38,7 +38,7 @@ public class ProductService {
 					product.setUnit(newProduct.getUnit());
 					return productRepository.save(product);
 				})
-				.orElseThrow(() -> new ProductNotFoundException(Long.parseLong(id)));
+				.orElseThrow(() -> new ProductNotFoundException(newProduct.getId()));
 	}
 
 	public void deleteProduct(String id) {

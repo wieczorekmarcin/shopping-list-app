@@ -31,9 +31,9 @@ public class ProductController {
 		return productService.createProduct(product);
 	}
 
-	@RequestMapping(path = "/api/products/{id}", method = RequestMethod.PUT)
-	public Product updateProduct(@RequestBody Product product, @PathVariable("id") String id) {
-		return productService.updateProduct(product, id);
+	@RequestMapping(path = "/api/products", method = RequestMethod.PUT)
+	public Product updateProduct(@RequestBody Product product) {
+		return productService.updateProduct(product);
 	}
 
 	@RequestMapping(path = "/api/products/{id}", method = RequestMethod.DELETE)
