@@ -10,8 +10,8 @@
 * Create Shopping List Item from Product
 * Add Shopping List Items to Shopping List
 * Add Shopping List to favourites
-* Mark Shopping List Items as purchased
 * Check status of Shopping List
+* Mark Shopping List Items as purchased
 * Mark Shopping List as completed
 ### Non-functional requirements
 * The application must have separate modules: My Shopping Lists, Promotions, Recipes, Trash, Settings
@@ -21,12 +21,14 @@
 * In the application, mandatory fields are marked differently than optional fields.
 * Application colors: white, blue, red
 ### Description, recipients, benefits
-Shopping List App allows you to add shopping list and monitor their status. Many product categories allow you to find almost every products. By using the UI Design Pattern, the user will be able to use all the modules and functionalities ones without any problems.## Documentation
+Shopping List App allows you to add shopping list and monitor their status. Many product categories allow you to find almost every products. By using the UI Design Pattern, the user will be able to use all the modules and functionalities ones without any problems.
+## Documentation
 ### Technology stack
 - Java 8
 - Spring Boot 2
 - Ionic
 - Maven
+- JUnit 5
 - H2 Database Engine + H2 console
 - Swagger UI
 ### Database diagram
