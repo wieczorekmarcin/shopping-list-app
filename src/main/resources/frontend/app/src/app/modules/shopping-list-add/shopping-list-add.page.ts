@@ -65,8 +65,7 @@ export class ShoppingListAddPage implements OnInit {
 
 	async presentToast() {
 		const toast = await this.toastController.create({
-			message: 'Lista zakupów została dodana!',
-			color: 'success',
+			message: 'Shopping List has been added!',
 			duration: 2000
 		});
 		toast.present();

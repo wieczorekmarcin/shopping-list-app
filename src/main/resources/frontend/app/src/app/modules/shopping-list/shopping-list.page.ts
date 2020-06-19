@@ -52,7 +52,7 @@ export class ShoppingListPage implements OnInit {
 		shoppingList.deleted = true;
 		this.shoppingListService.update(shoppingList).subscribe();
 
-		await this.presentToast('Lista została usunięta!');
+		await this.presentToast('Shopping List has been removed!');
 
 		await this.getAllShoppingLists();
 	}
@@ -89,8 +89,8 @@ export class ShoppingListPage implements OnInit {
 
 		await this.presentToast(
 			shoppingList.favourite
-				? 'Lista została dodana do ulubionych!'
-				: 'Lista została usunięta z ulubionych!');
+				? 'Shopping List has been added to favourites!'
+				: 'Shopping List has been removed from favourites!');
 	}
 
 	markShoppingListsAsCompleted() {
@@ -109,7 +109,6 @@ export class ShoppingListPage implements OnInit {
 	async presentToast(msg: string) {
 		const toast = await this.toastController.create({
 			message: msg,
-			color: 'success',
 			duration: 2000
 		});
 		toast.present();

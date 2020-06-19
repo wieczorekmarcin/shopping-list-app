@@ -34,7 +34,7 @@ export class ProductsPage implements OnInit {
 
 	async getCategories() {
 		const loading = await this.loadingController.create({
-			message: 'Proszę czekać...',
+			message: 'Please wait...',
 		});
 		loading.present().then(async () => {
 			let categoriesResponse = await this.categoryService.query().toPromise();
@@ -68,21 +68,9 @@ export class ProductsPage implements OnInit {
 
 	async presentToast() {
 		const toast = await this.toastController.create({
-			message: 'Produkt dodany do listy!',
-			color: 'success',
+			message: 'Product has been added to Shopping List!',
 			duration: 2000
 		});
 		toast.present();
-	}
-
-	async presentLoading() {
-		const loading = await this.loadingController.create({
-			message: 'Proszę czekać...',
-			duration: 2000,
-			translucent: true,
-		});
-		await loading.present();
-
-		return loading;
 	}
 }
