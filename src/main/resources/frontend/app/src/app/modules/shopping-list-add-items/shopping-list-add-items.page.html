@@ -10,6 +10,10 @@
 </ion-header>
 
 <ion-content class="ion-padding">
+	<ion-img src="assets/empty_list_items.png"
+			*ngIf="!shoppingListItems || shoppingListItems.length <= 0"
+			class="empty-list-img">
+	</ion-img>
 	<ion-list>
 		<ion-item (click)="markAsPurchased(shoppingListItem)" *ngFor="let shoppingListItem of shoppingListItems">
 			<ion-label>{{shoppingListItem.product.name}}</ion-label>

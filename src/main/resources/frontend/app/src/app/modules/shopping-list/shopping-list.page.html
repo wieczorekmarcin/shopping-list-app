@@ -10,6 +10,11 @@
 </ion-header>
 
 <ion-content class="ion-padding" fullscreen="true">
+	<ion-img
+			src="assets/empty_list.png"
+			class="empty-list-img"
+			*ngIf="!shoppingLists || shoppingLists.length <= 0">
+	</ion-img>
 	<ion-list>
 		<ion-item-sliding *ngFor="let shoppingList of shoppingLists">
 			<ion-item>

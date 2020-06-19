@@ -3,6 +3,7 @@ export interface IProduct {
 	name?: string;
 	category?: string;
 	unit?: string;
+	added?: boolean;
 }
 
 export class Product implements IProduct {
@@ -10,7 +11,8 @@ export class Product implements IProduct {
 		public id?: number,
 		public name?: string,
 		public category?: string,
-		public unit?: string
+		public unit?: string,
+		public added?: boolean
 	) {
 	}
 }

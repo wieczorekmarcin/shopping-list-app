@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ModalController, ToastController} from "@ionic/angular";
+import {LoadingController, ModalController, ToastController} from "@ionic/angular";
 import {ProductService} from "../../core/services/product.service";
 import {IProduct} from "../../shared/models/product";
 import {ICategory} from "../../shared/models/category";
@@ -24,12 +24,24 @@ export class ProductsPage implements OnInit {
 				private shoppingListItemService: ShoppingListItemService,
 				private shoppingListService: ShoppingListService,
 				private categoryService: CategoryService,
-				private toastController: ToastController) {
+				private toastController: ToastController,
+				private loadingController: LoadingController) {
 	}
 
 	async ngOnInit() {
-		let categoriesResponse = await this.categoryService.query().toPromise();
-		this.categories = categoriesResponse.body;
+		await this.getCategories();
+	}
+
+	async getCategories() {
+		const loading = await this.loadingController.create({
+			message: 'Proszę czekać...',
+		});
+		loading.present().then(async () => {
+			let categoriesResponse = await this.categoryService.query().toPromise();
+			this.categories = categoriesResponse.body;
+		}).then(() => {
+			loading.dismiss();
+		});
 	}
 
 	async dismiss() {
@@ -39,6 +51,7 @@ export class ProductsPage implements OnInit {
 	}
 
 	async createShoppingListItem(product: IProduct) {
+		product.added = true;
 		const shoppingListItemHttpResponse = await this.shoppingListItemService.create({
 			product: {
 				id: product.id
@@ -60,5 +73,16 @@ export class ProductsPage implements OnInit {
 			duration: 2000
 		});
 		toast.present();
+	}
+
+	async presentLoading() {
+		const loading = await this.loadingController.create({
+			message: 'Proszę czekać...',
+			duration: 2000,
+			translucent: true,
+		});
+		await loading.present();
+
+		return loading;
 	}
 }

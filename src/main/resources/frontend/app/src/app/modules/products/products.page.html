@@ -1,8 +1,6 @@
-<ion-header translucent>
-	<ion-icon (click)="dismiss()" name="close-outline"></ion-icon>
-</ion-header>
-
 <ion-content class="ion-padding">
+	<ion-icon (click)="dismiss()" name="close-outline"></ion-icon>
+
 	<mat-expansion-panel *ngFor="let category of categories">
 		<mat-expansion-panel-header>
 			<mat-panel-title>
@@ -11,7 +9,10 @@
 		</mat-expansion-panel-header>
 		<ion-list>
 			<ion-item *ngFor="let product of category.products">
-				<ion-icon (click)="createShoppingListItem(product)" name="add-circle" slot="end"></ion-icon>
+				<ion-icon (click)="createShoppingListItem(product)"
+						  name="add-circle"
+						  slot="end"
+						  [ngClass]="product.added ? 'added' : ''"></ion-icon>
 				<ion-label>{{ product.name }}</ion-label>
 			</ion-item>
 		</ion-list>
