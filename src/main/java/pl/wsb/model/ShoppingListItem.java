@@ -1,7 +1,6 @@
 package pl.wsb.model;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "ShoppingListItems")
@@ -13,22 +12,16 @@ public class ShoppingListItem {
 
 	private boolean purchased;
 
-	@NotNull
 	@OneToOne
 	private Product product;
-
-	@NotNull
-	@ManyToOne
-	private ShoppingList shoppingList;
 
 	public ShoppingListItem() {
 	}
 
-	public ShoppingListItem(Long id, boolean purchased, Product product, ShoppingList shoppingList) {
+	public ShoppingListItem(Long id, boolean purchased, Product product) {
 		this.id = id;
 		this.purchased = purchased;
 		this.product = product;
-		this.shoppingList = shoppingList;
 	}
 
 	public Long getId() {
@@ -53,13 +46,5 @@ public class ShoppingListItem {
 
 	public void setProduct(Product product) {
 		this.product = product;
-	}
-
-	public ShoppingList getShoppingList() {
-		return shoppingList;
-	}
-
-	public void setShoppingList(ShoppingList shoppingList) {
-		this.shoppingList = shoppingList;
 	}
 }

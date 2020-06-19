@@ -29,16 +29,15 @@ public class ShoppingListItemService {
 		return shoppingListItemRepository.save(shoppingListItem);
 	}
 
-	public ShoppingListItem updateShoppingListItem(ShoppingListItem newShoppingListItem, String id) {
-		return shoppingListItemRepository.findById(Long.parseLong(id))
+	public ShoppingListItem updateShoppingListItem(ShoppingListItem newShoppingListItem) {
+		return shoppingListItemRepository.findById(newShoppingListItem.getId())
 				.map(shoppingListItem -> {
 					shoppingListItem.setId(newShoppingListItem.getId());
 					shoppingListItem.setProduct(newShoppingListItem.getProduct());
-					shoppingListItem.setShoppingList(newShoppingListItem.getShoppingList());
 					shoppingListItem.setPurchased(newShoppingListItem.isPurchased());
 					return shoppingListItemRepository.save(shoppingListItem);
 				})
-				.orElseThrow(() -> new ShoppingListItemNotFoundException(Long.parseLong(id)));
+				.orElseThrow(() -> new ShoppingListItemNotFoundException(newShoppingListItem.getId()));
 	}
 
 	public void deleteShoppingListItem(String id) {

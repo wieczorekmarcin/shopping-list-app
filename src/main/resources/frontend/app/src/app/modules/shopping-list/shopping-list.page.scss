@@ -1,0 +1,18 @@
+.shopping-list-menu {
+  position: absolute;
+  bottom: 40%;
+  right: 0;
+  font-size: 25px;
+}
+
+.shopping-list-status {
+  position: absolute;
+  bottom: 20%;
+  right: 5%;
+  z-index: 1;
+  font-size: 20px;
+}
+
+ion-item-option {
+  height: 94%;
+}

@@ -1,13 +1,16 @@
+import {IProduct} from "./product";
 
 export interface ICategory {
-    id?: number;
-    name?: string;
+	categoryId?: number;
+	name?: string;
+	products?: IProduct[]
 }
 
 export class Category implements ICategory {
-    constructor(
-        public id?: number,
-        public name?: string
-    ) {
-    }
+	constructor(
+		public categoryId?: number,
+		public name?: string,
+		public products?: IProduct[]
+	) {
+	}
 }

@@ -1,10 +1,13 @@
 package pl.wsb.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "Products")
+@JsonIgnoreProperties({"category"})
 public class Product {
 
 	@Id
@@ -14,11 +17,10 @@ public class Product {
 	@NotNull
 	private String name;
 
-	@NotNull
-	@ManyToOne
+	@ManyToOne()
+	@JoinColumn(name="categoryId", referencedColumnName = "categoryId", insertable = false, updatable = false)
 	private Category category;
 
-	@NotNull
 	@ManyToOne
 	private Unit unit;
 

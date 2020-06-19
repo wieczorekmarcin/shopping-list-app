@@ -7,9 +7,9 @@ import {IProduct} from "../../shared/models/product";
 @Injectable({providedIn: 'root'})
 export class ProductService extends AbstractRestService<IProduct> {
 
-    constructor(http: HttpClient) {
-        super(http,
-            environment.apiEndpoint + environment.apiResource.product.resource
-        );
-    }
+	constructor(http: HttpClient) {
+		super(http,
+			environment.apiEndpoint + environment.apiResource.product.resource
+		);
+	}
 }

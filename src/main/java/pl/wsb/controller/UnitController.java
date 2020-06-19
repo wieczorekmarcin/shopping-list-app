@@ -31,9 +31,9 @@ public class UnitController {
 		return unitService.createUnit(unit);
 	}
 
-	@RequestMapping(path = "/api/units/{id}", method = RequestMethod.PUT)
-	public Unit updateUnit(@RequestBody Unit unit, @PathVariable("id") String id) {
-		return unitService.updateUnit(unit, id);
+	@RequestMapping(path = "/api/units", method = RequestMethod.PUT)
+	public Unit updateUnit(@RequestBody Unit unit) {
+		return unitService.updateUnit(unit);
 	}
 
 	@RequestMapping(path = "/api/units/{id}", method = RequestMethod.DELETE)

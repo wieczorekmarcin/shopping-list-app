@@ -29,14 +29,14 @@ public class UnitService {
 		return unitRepository.save(unit);
 	}
 
-	public Unit updateUnit(Unit newUnit, String id) {
-		return unitRepository.findById(Long.parseLong(id))
+	public Unit updateUnit(Unit newUnit) {
+		return unitRepository.findById(newUnit.getId())
 				.map(unit -> {
 					unit.setId(newUnit.getId());
 					unit.setSymbol(newUnit.getSymbol());
 					return unitRepository.save(unit);
 				})
-				.orElseThrow(() -> new UnitNotFoundException(Long.parseLong(id)));
+				.orElseThrow(() -> new UnitNotFoundException(newUnit.getId()));
 	}
 
 	public void deleteUnit(String id) {

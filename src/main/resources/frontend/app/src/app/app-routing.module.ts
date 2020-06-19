@@ -23,14 +23,22 @@ const routes: Routes = [
 		path: 'settings',
 		loadChildren: () => import('./modules/settings/settings.module').then(m => m.SettingsPageModule)
 	},
-  {
-    path: 'shopping-list-add',
-    loadChildren: () => import('./modules/shopping-list-add/shopping-list-add.module').then( m => m.ShoppingListAddPageModule)
-  },
-  {
-    path: 'shopping-list',
-    loadChildren: () => import('./modules/shopping-list/shopping-list.module').then( m => m.ShoppingListPageModule)
-  },
+	{
+		path: 'shopping-list-add',
+		loadChildren: () => import('./modules/shopping-list-add/shopping-list-add.module').then(m => m.ShoppingListAddPageModule)
+	},
+	{
+		path: 'shopping-list',
+		loadChildren: () => import('./modules/shopping-list/shopping-list.module').then(m => m.ShoppingListPageModule)
+	},
+	{
+		path: 'shopping-list-add-items',
+		loadChildren: () => import('./modules/shopping-list-add-items/shopping-list-add-items.module').then(m => m.ShoppingListAddItemsPageModule)
+	},
+	{
+		path: 'products',
+		loadChildren: () => import('./modules/products/products.module').then(m => m.ProductsPageModule)
+	},
 ];
 
 @NgModule({

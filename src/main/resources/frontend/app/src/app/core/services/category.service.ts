@@ -7,9 +7,9 @@ import {ICategory} from "../../shared/models/category";
 @Injectable({providedIn: 'root'})
 export class CategoryService extends AbstractRestService<ICategory> {
 
-    constructor(http: HttpClient) {
-        super(http,
-            environment.apiEndpoint + environment.apiResource.category.resource
-        );
-    }
+	constructor(http: HttpClient) {
+		super(http,
+			environment.apiEndpoint + environment.apiResource.category.resource
+		);
+	}
 }

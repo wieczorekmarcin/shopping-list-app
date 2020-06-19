@@ -1,17 +1,19 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 
-import { ShoppingListPage } from './shopping-list.page';
+import {ShoppingListPage} from './shopping-list.page';
+import {MomentModule} from "ngx-moment";
 
 const routes: Routes = [
-  {
-    path: '',
-    component: ShoppingListPage
-  }
+	{
+		path: '',
+		component: ShoppingListPage
+	}
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+	imports: [RouterModule.forChild(routes), MomentModule],
+	exports: [RouterModule],
 })
-export class ShoppingListPageRoutingModule {}
+export class ShoppingListPageRoutingModule {
+}

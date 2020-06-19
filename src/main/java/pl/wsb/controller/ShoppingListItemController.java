@@ -31,9 +31,9 @@ public class ShoppingListItemController {
 		return shoppingListItemService.createShoppingListItem(shoppingListItem);
 	}
 
-	@RequestMapping(path = "/api/shoppingListItems/{id}", method = RequestMethod.PUT)
-	public ShoppingListItem updateShoppingListItem(@RequestBody ShoppingListItem shoppingListItem, @PathVariable("id") String id) {
-		return shoppingListItemService.updateShoppingListItem(shoppingListItem, id);
+	@RequestMapping(path = "/api/shoppingListItems", method = RequestMethod.PUT)
+	public ShoppingListItem updateShoppingListItem(@RequestBody ShoppingListItem shoppingListItem) {
+		return shoppingListItemService.updateShoppingListItem(shoppingListItem);
 	}
 
 	@RequestMapping(path = "/api/shoppingListItems/{id}", method = RequestMethod.DELETE)

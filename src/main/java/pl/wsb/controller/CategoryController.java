@@ -36,9 +36,9 @@ public class CategoryController {
 		return new ResponseEntity(newCategory, HttpStatus.CREATED);
 	}
 
-	@RequestMapping(path = "/api/categories/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<Category> updateCategory(@RequestBody Category category, @PathVariable("id") String id) {
-		Category updatedCategory = categoryService.updateCategory(category, id);
+	@RequestMapping(path = "/api/categories", method = RequestMethod.PUT)
+	public ResponseEntity<Category> updateCategory(@RequestBody Category category) {
+		Category updatedCategory = categoryService.updateCategory(category);
 		return new ResponseEntity(updatedCategory, HttpStatus.OK);
 
 	}

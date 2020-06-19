@@ -1,12 +1,12 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
-import { IonicModule } from '@ionic/angular';
+import {IonicModule} from '@ionic/angular';
 
-import { ShoppingListAddPageRoutingModule } from './shopping-list-add-routing.module';
+import {ShoppingListAddPageRoutingModule} from './shopping-list-add-routing.module';
 
-import { ShoppingListAddPage } from './shopping-list-add.page';
+import {ShoppingListAddPage} from './shopping-list-add.page';
 
 @NgModule({
 	imports: [
@@ -17,6 +17,7 @@ import { ShoppingListAddPage } from './shopping-list-add.page';
 		FormsModule,
 		ReactiveFormsModule
 	],
-  declarations: [ShoppingListAddPage]
+	declarations: [ShoppingListAddPage]
 })
-export class ShoppingListAddPageModule {}
+export class ShoppingListAddPageModule {
+}

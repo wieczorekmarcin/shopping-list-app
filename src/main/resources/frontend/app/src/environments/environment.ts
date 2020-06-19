@@ -19,7 +19,7 @@ export const environment = {
 			resource: 'shoppingLists',
 		},
 		shoppingListItem: {
-			resource: 'shoppingListsItems',
+			resource: 'shoppingListItems',
 		}
 	}
 };

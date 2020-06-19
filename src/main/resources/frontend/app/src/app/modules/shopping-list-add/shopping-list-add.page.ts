@@ -1,9 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ModalController} from "@ionic/angular";
+import {ModalController, ToastController} from "@ionic/angular";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ShoppingListService} from "../../core/services/shopping-list.service";
 import * as moment from 'moment';
-import {Router} from "@angular/router";
 
 @Component({
 	selector: 'app-shopping-list-add',
@@ -17,8 +16,13 @@ export class ShoppingListAddPage implements OnInit {
 	submitted = false;
 
 	constructor(private modalController: ModalController,
+				private toastController: ToastController,
 				private formBuilder: FormBuilder,
 				private shoppingListService: ShoppingListService) {
+	}
+
+	get form() {
+		return this.shoppingListForm.controls;
 	}
 
 	ngOnInit() {
@@ -28,12 +32,8 @@ export class ShoppingListAddPage implements OnInit {
 	initForm() {
 		this.shoppingListForm = this.formBuilder.group({
 			name: ['', [Validators.required]],
-			description: ['', [Validators.required]],
+			description: [''],
 		});
-	}
-
-	get form() {
-		return this.shoppingListForm.controls;
 	}
 
 	getValue(key: string) {
@@ -54,11 +54,21 @@ export class ShoppingListAddPage implements OnInit {
 		}).subscribe();
 
 		await this.dismiss();
+		this.presentToast();
 	}
 
 	async dismiss() {
 		await this.modalController.dismiss({
 			'dismissed': true
 		});
+	}
+
+	async presentToast() {
+		const toast = await this.toastController.create({
+			message: 'Lista zakupów została dodana!',
+			color: 'success',
+			duration: 2000
+		});
+		toast.present();
 	}
 }

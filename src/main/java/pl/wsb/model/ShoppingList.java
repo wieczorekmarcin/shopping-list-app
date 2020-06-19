@@ -4,6 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "ShoppingLists")
@@ -11,9 +12,8 @@ public class ShoppingList {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long shoppingListId;
 
-	@NotNull
 	private String name;
 
 	private String description;
@@ -24,28 +24,31 @@ public class ShoppingList {
 
 	private boolean favourite;
 
-	@OneToMany(mappedBy = "shoppingList")
-	private List<ShoppingListItem> items;
+	private boolean deleted;
+
+	@OneToMany
+	private Set<ShoppingListItem> items;
 
 	public ShoppingList() {
 	}
 
-	public ShoppingList(Long id, String name, String description, Date createdOn, boolean completed, boolean favourite, List<ShoppingListItem> items) {
-		this.id = id;
+	public ShoppingList(Long shoppingListId, String name, String description, Date createdOn, boolean completed, boolean favourite, boolean deleted, Set<ShoppingListItem> items) {
+		this.shoppingListId = shoppingListId;
 		this.name = name;
 		this.description = description;
 		this.createdOn = createdOn;
 		this.completed = completed;
 		this.favourite = favourite;
+		this.deleted = deleted;
 		this.items = items;
 	}
 
-	public Long getId() {
-		return id;
+	public Long getShoppingListId() {
+		return shoppingListId;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setShoppingListId(Long shoppingListId) {
+		this.shoppingListId = shoppingListId;
 	}
 
 	public String getName() {
@@ -88,11 +91,19 @@ public class ShoppingList {
 		this.favourite = favourite;
 	}
 
-	public List<ShoppingListItem> getItems() {
+	public boolean isDeleted() {
+		return deleted;
+	}
+
+	public void setDeleted(boolean deleted) {
+		this.deleted = deleted;
+	}
+
+	public Set<ShoppingListItem> getItems() {
 		return items;
 	}
 
-	public void setItems(List<ShoppingListItem> items) {
+	public void setItems(Set<ShoppingListItem> items) {
 		this.items = items;
 	}
 }

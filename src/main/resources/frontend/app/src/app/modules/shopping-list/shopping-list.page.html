@@ -1,5 +1,5 @@
 <ion-header>
-	<ion-toolbar>
+	<ion-toolbar color="primary">
 		<ion-buttons slot="start">
 			<ion-menu-button></ion-menu-button>
 		</ion-buttons>
@@ -9,18 +9,47 @@
 	</ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen="true" class="ion-padding">
-	<ion-card *ngFor="let shoppingList of shoppingLists">
-		<ion-card-header>
-			<ion-card-title>{{ shoppingList.name }}</ion-card-title>
-		</ion-card-header>
+<ion-content class="ion-padding" fullscreen="true">
+	<ion-list>
+		<ion-item-sliding *ngFor="let shoppingList of shoppingLists">
+			<ion-item>
+				<ion-label>
+					<h2>{{ shoppingList.name }}</h2>
+					<p>{{ shoppingList.description }}</p>
+				</ion-label>
+				<ion-note slot="end">
+					{{ shoppingList.createdOn | date : 'medium' }}
+				</ion-note>
+			</ion-item>
 
-		<ion-card-content>
-			{{ shoppingList.description }}
-		</ion-card-content>
-	</ion-card>
+			<div [style]="shoppingList.completed ? 'color: mediumseagreen' : 'color: royalblue'"
+				 class="shopping-list-status">
+				{{ getPurchasedShoppingListItems(shoppingList) }} / {{ getAllShoppingListItems(shoppingList) }}
+			</div>
 
-	<ion-fab horizontal="end" vertical="bottom" slot="fixed" (click)="addShoppingList()">
+			<ion-item-options side="start">
+				<ion-item-option (click)="addShopingListToFavourites(shoppingList)"
+								 [color]="shoppingList.favourite ? 'danger' : 'secondary'">
+					<ion-icon name="heart" slot="icon-only"></ion-icon>
+				</ion-item-option>
+			</ion-item-options>
+
+			<ion-item-options side="end">
+				<ion-item-option (click)="editShoppingListItems(shoppingList)">
+					<ion-icon name="pencil" slot="icon-only"></ion-icon>
+				</ion-item-option>
+				<ion-item-option (click)="deleteShoppingList(shoppingList)" color="danger">
+					<ion-icon name="trash" slot="icon-only"></ion-icon>
+				</ion-item-option>
+			</ion-item-options>
+			<ion-progress-bar
+					[color]="shoppingList.completed ? 'success' : 'primary'"
+					[value]="getCurentShoppingListStatus(shoppingList)">
+			</ion-progress-bar>
+		</ion-item-sliding>
+	</ion-list>
+
+	<ion-fab (click)="addShoppingList()" horizontal="end" slot="fixed" vertical="bottom">
 		<ion-fab-button color="primary">
 			<ion-icon name="add"></ion-icon>
 		</ion-fab-button>

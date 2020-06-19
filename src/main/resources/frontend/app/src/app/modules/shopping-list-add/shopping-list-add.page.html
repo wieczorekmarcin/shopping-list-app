@@ -1,21 +1,23 @@
 <ion-content class="ion-padding">
-	<ion-icon name="close-outline" (click)="dismiss()"></ion-icon>
-	<form [formGroup]="shoppingListForm">
-		<ion-list lines="full" class="ion-no-margin ion-no-padding">
-			<ion-item [ngClass]="{ 'is-invalid': submitted && form.name.errors }">
-				<ion-label position="stacked">Nazwa listy</ion-label>
-				<ion-input type="text" formControlName="name"></ion-input>
-			</ion-item>
-			<div *ngIf="submitted && form.name.errors" class="invalid-feedback">
-				<div *ngIf="form.name.errors.required">To pole jest wymagane.</div>
+	<ion-icon (click)="dismiss()" name="close-outline"></ion-icon>
+	<div class="form-wrapper">
+		<form [formGroup]="shoppingListForm">
+			<ion-list class="ion-no-margin ion-no-padding" lines="full">
+				<ion-item [ngClass]="{ 'is-invalid': submitted && form.name.errors }">
+					<ion-label position="stacked">Nazwa listy</ion-label>
+					<ion-input formControlName="name" type="text"></ion-input>
+				</ion-item>
+				<div *ngIf="submitted && form.name.errors" class="invalid-feedback">
+					<p *ngIf="form.name.errors.required">To pole jest wymagane.</p>
+				</div>
+				<ion-item>
+					<ion-label position="stacked">Opis</ion-label>
+					<ion-textarea formControlName="description" type="textarea"></ion-textarea>
+				</ion-item>
+			</ion-list>
+			<div class="ion-text-right">
+				<ion-button (click)="onSubmit()">Utwórz</ion-button>
 			</div>
-
-
-			<ion-item>
-				<ion-label position="stacked">Opis</ion-label>
-				<ion-textarea type="textarea" formControlName="description"></ion-textarea>
-			</ion-item>
-		</ion-list>
-        <ion-button (click)="onSubmit()">UTWÓRZ</ion-button>
-	</form>
+		</form>
+	</div>
 </ion-content>

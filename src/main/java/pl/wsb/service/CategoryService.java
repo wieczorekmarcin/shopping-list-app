@@ -29,14 +29,14 @@ public class CategoryService {
 		return categoryRepository.save(category);
 	}
 
-	public Category updateCategory(Category newCategory, String id) {
-		return categoryRepository.findById(Long.parseLong(id))
+	public Category updateCategory(Category newCategory) {
+		return categoryRepository.findById(newCategory.getCategoryId())
 				.map(category -> {
-					category.setId(newCategory.getId());
+					category.setCategoryId(newCategory.getCategoryId());
 					category.setName(newCategory.getName());
 					return categoryRepository.save(category);
 				})
-				.orElseThrow(() -> new CategoryNotFoundException(Long.parseLong(id)));
+				.orElseThrow(() -> new CategoryNotFoundException(newCategory.getCategoryId()));
 	}
 
 	public void deleteCategory(String id) {
