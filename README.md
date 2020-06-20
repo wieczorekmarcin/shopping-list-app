@@ -17,7 +17,6 @@
 * The application must have separate modules: My Shopping Lists, Promotions, Recipes, Trash, Settings
 * The application displays correctly on Android and iOS
 * The application will comply with the User Interface Design pattern.
-* The maximum response time of an application to a user's query cannot be longer than 1.5 seconds.
 * In the application, mandatory fields are marked differently than optional fields.
 * Application colors: white, blue, red
 ### Description, recipients, benefits
