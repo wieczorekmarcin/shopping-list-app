@@ -21,7 +21,8 @@
 * In the application, mandatory fields are marked differently than optional fields.
 * Application colors: white, blue, red
 ### Description, recipients, benefits
-Shopping List App allows you to add shopping list and monitor their status. Many product categories allow you to find almost every products. By using the UI Design Pattern, the user will be able to use all the modules and functionalities ones without any problems.
+The application is directed to people who would like to facilitate everyday shopping.
+As part of the Shopping List App, we can create new lists, manage them, monitor their status and add products.
 ## Documentation
 ### Technology stack
 - Java 8
