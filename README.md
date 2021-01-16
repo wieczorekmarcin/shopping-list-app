@@ -20,7 +20,7 @@
 * Mandatory fields should be validated and marked in a different way than optional fields.
 * Application colors: white, blue, red
 ### Description, end users, benefits of use
-The application is aimed at people who have trouble remembering their purchases, and traditional methods (such as writing down on a piece of paper) are insufficient for them.
+The application is aimed at people who have problem with remembering their purchases, and traditional methods (such as writing down on a piece of paper) are insufficient for them.
 With the app, we can create new lists, manage them, monitor their status, and add products.
 ## Documentation
 ### Technology stack
