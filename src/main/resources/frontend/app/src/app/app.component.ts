@@ -18,8 +18,8 @@ export class AppComponent {
 			icon: 'list'
 		},
 		{
-			title: 'Recipies',
-			url: '/recipies',
+			title: 'Recipes',
+			url: '/recipes',
 			icon: 'restaurant'
 		},
 		{

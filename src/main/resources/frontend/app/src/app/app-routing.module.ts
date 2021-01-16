@@ -8,36 +8,36 @@ const routes: Routes = [
 		pathMatch: 'full'
 	},
 	{
-		path: 'recipies',
-		loadChildren: () => import('./modules/recipies/recipies.module').then(m => m.RecipiesPageModule)
+		path: 'recipes',
+		loadChildren: () => import('./pages/recipes/recipies.module').then(m => m.RecipiesPageModule)
 	},
 	{
 		path: 'promotions',
-		loadChildren: () => import('./modules/promotions/promotions.module').then(m => m.PromotionsPageModule)
+		loadChildren: () => import('./pages/promotions/promotions.module').then(m => m.PromotionsPageModule)
 	},
 	{
 		path: 'trash',
-		loadChildren: () => import('./modules/trash/trash.module').then(m => m.TrashPageModule)
+		loadChildren: () => import('./pages/trash/trash.module').then(m => m.TrashPageModule)
 	},
 	{
 		path: 'settings',
-		loadChildren: () => import('./modules/settings/settings.module').then(m => m.SettingsPageModule)
+		loadChildren: () => import('./pages/settings/settings.module').then(m => m.SettingsPageModule)
 	},
 	{
 		path: 'shopping-list-add',
-		loadChildren: () => import('./modules/shopping-list-add/shopping-list-add.module').then(m => m.ShoppingListAddPageModule)
+		loadChildren: () => import('./pages/shopping-list-add/shopping-list-add.module').then(m => m.ShoppingListAddPageModule)
 	},
 	{
 		path: 'shopping-list',
-		loadChildren: () => import('./modules/shopping-list/shopping-list.module').then(m => m.ShoppingListPageModule)
+		loadChildren: () => import('./pages/shopping-list/shopping-list.module').then(m => m.ShoppingListPageModule)
 	},
 	{
 		path: 'shopping-list-add-items',
-		loadChildren: () => import('./modules/shopping-list-add-items/shopping-list-add-items.module').then(m => m.ShoppingListAddItemsPageModule)
+		loadChildren: () => import('./pages/shopping-list-add-items/shopping-list-add-items.module').then(m => m.ShoppingListAddItemsPageModule)
 	},
 	{
 		path: 'products',
-		loadChildren: () => import('./modules/products/products.module').then(m => m.ProductsPageModule)
+		loadChildren: () => import('./pages/products/products.module').then(m => m.ProductsPageModule)
 	},
 ];
 
