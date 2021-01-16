@@ -5,8 +5,8 @@
 * Create/Read/Update/Delete unit
 * Create/Read/Update/Delete product
 * Create/Read/Update/Delete category
-* Create/Read/Update/Delete shoppig list
-* Create/Read/Update/Delete shoppig list item
+* Create/Read/Update/Delete shopping list
+* Create/Read/Update/Delete shopping list item
 * Create Shopping List Item from Product
 * Add Shopping List Items to Shopping List
 * Add Shopping List to favourites
@@ -14,14 +14,14 @@
 * Mark Shopping List Items as purchased
 * Mark Shopping List as completed
 ### Non-functional requirements
-* The application must have separate modules: My Shopping Lists, Promotions, Recipes, Trash, Settings
-* The application displays correctly on Android and iOS
-* The application will comply with the User Interface Design pattern.
-* In the application, mandatory fields are marked differently than optional fields.
+* The Application should have pages: My Shopping Lists, Promotions, Recipes, Trash, Settings,
+* The Application displays Android and iOS content correctly,
+* Implementation of the Application should be compliant with SOLID principles,
+* Mandatory fields should be validated and marked in a different way than optional fields.
 * Application colors: white, blue, red
-### Description, recipients, benefits
-The application is directed to people who would like to facilitate everyday shopping.
-As part of the Shopping List App, we can create new lists, manage them, monitor their status and add products.
+### Description, end users, benefits of use
+The application is aimed at people who have trouble remembering their purchases, and traditional methods (such as writing down on a piece of paper) are insufficient for them.
+With the app, we can create new lists, manage them, monitor their status, and add products.
 ## Documentation
 ### Technology stack
 - Java 8
